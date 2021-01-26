@@ -16,8 +16,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutterauth/ui/screens/login_screen.dart';
 import 'package:flutterauth/ui/screens/home_screen.dart';
+import 'package:flutterauth/ui/screens/login_screen.dart';
 import 'package:flutterauth/ui/screens/progress_screen.dart';
 import 'package:flutterauth/ui/theme/default_theme.dart';
 
@@ -52,6 +52,10 @@ class _FlutterAuthState extends State<FlutterAuth> {
             } else if (state.isLoading()) {
               return ProgressScreen();
             } else {
+              EasyLoading.showToast(
+                'Welcome back ${state.user.userInfo.preferredUsername}',
+                toastPosition: EasyLoadingToastPosition.bottom,
+              );
               return HomeScreen();
             }
           },
