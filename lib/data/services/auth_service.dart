@@ -26,9 +26,18 @@ class AuthService {
       logMessage(this, "authorized and exchanged the code for token...");
 
       // Save the token into flutter secure storage.
-      _secureStorage.write(key: StorageService.idTokenStorageKey, value: result.idToken);
-      _secureStorage.write(key: StorageService.accessTokenStorageKey, value: result.accessToken);
-      _secureStorage.write(key: StorageService.refreshTokenStorageKey, value: result.refreshToken);
+      _secureStorage.write(
+        key: StorageService.idTokenStorageKey,
+        value: result.idToken,
+      );
+      _secureStorage.write(
+        key: StorageService.accessTokenStorageKey,
+        value: result.accessToken,
+      );
+      _secureStorage.write(
+        key: StorageService.refreshTokenStorageKey,
+        value: result.refreshToken,
+      );
       logMessage(this, "saved tokens to secure storage...");
 
       // Call the `oauth2/userinfo/` endpoint to get the user information.
@@ -56,9 +65,8 @@ class AuthService {
   }
 
   Future<void> logout() async {
-    // Single logout endpoint. However. instead of this we can just simply invalidate the
+    // Below url is the single logout endpoint. However. instead of this we can just simply invalidate the
     // tokens which are stored in the secure storage.
-    //
     // https://is.wso2isdemo.com:443/oidc/logout?id_token_hint=id_token&post_logout_redirect_uri=
     await _secureStorage.wipeAll();
   }

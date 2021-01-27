@@ -19,8 +19,7 @@ class AuthState extends Equatable {
   }
 
   bool isUnAuthenticated() {
-    return authStatus == AuthStatus.unknown ||
-        authStatus == AuthStatus.unauthenticated;
+    return authStatus == AuthStatus.unknown || authStatus == AuthStatus.unauthenticated;
   }
 
   @override

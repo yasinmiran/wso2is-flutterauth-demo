@@ -132,61 +132,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Widget _buildUsernameSection(BuildContext context) {
-  //   return Container(
-  //     padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-  //     decoration: BoxDecoration(
-  //       color: AppColors.white.withOpacity(0.2),
-  //       borderRadius: BorderRadius.circular(4),
-  //     ),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //       children: [
-  //         Icon(
-  //           Icons.account_circle_sharp,
-  //           size: Theme.of(context).textTheme.headline3.fontSize,
-  //         ),
-  //         Column(
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: [
-  //             Text(
-  //               "Username",
-  //               style: Theme.of(context).textTheme.bodyText1,
-  //             ),
-  //             Text(context.read<AuthCubit>().state.user.username),
-  //           ],
-  //         ),
-  //         FlatButton(
-  //           padding: EdgeInsets.zero,
-  //           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-  //           onPressed: () {
-  //             Navigator.push(
-  //               context,
-  //               MaterialPageRoute(builder: (_) {
-  //                 return BlocProvider.value(
-  //                   value: BlocProvider.of<AuthCubit>(context),
-  //                   child: ProfileScreen(),
-  //                 );
-  //               }),
-  //             );
-  //           },
-  //           child: Row(
-  //             children: [
-  //               Icon(Icons.person_outline_rounded),
-  //               Text(
-  //                 "View User Details",
-  //                 style: Theme.of(context).textTheme.bodyText2.copyWith(
-  //                       fontWeight: FontWeight.bold,
-  //                     ),
-  //               ),
-  //             ],
-  //           ),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
   Widget _buildUserWelcomeWidget(BuildContext context) {
     return InkWell(
       onTap: () {
